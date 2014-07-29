@@ -13,66 +13,40 @@ Methods
 GAMES
 ======
 
-GET base_url/rest/games[?expand=true]
-=====================================
+### GET base_url/rest/games[?expand=true]
 
 This method will return all the games available in the server.
-Response will look something like:
 
-	` 
-   {
-    "href": "http://localhost:8080/tic-tac-toe-rest/rest/games",
-    "offset": 0,
-    "limit": 27,
-    "items": [
-        {
-            "href": "http://localhost:8080/tic-tac-toe-rest/rest/games/19"
-        },
-        {
-            "href": "http://localhost:8080/tic-tac-toe-rest/rest/games/17"
-        },
-        {
-            "href": "http://localhost:8080/tic-tac-toe-rest/rest/games/18"
-        }
-     }
-   `
 In case you would want to check the content of all the games, you can add the request parameter: expand=true.
 
-GET base_url/rest/games/{id}
-============================
+### GET base_url/rest/games/{id}
 
 This method will get one of the games that already exist in the server.
 
-POST base_url/rest/games
-========================
+### POST base_url/rest/games
 
 This method will create a new game with two players, one for the Circle shapes and the other for the Cross shapes in the game.
 
-PUT base_url/rest/games/{id} --data "{status:"aStatus"}"
-========================================================
+### PUT base_url/rest/games/{id} --data "{status:"aStatus"}"
 Where: id is here the game id and aStatus is one of the followings:
 	- STARTED: Use this status to start the game.
 	- FINISHED: Use this status to finish the game.
 	
 This method will either start a created game or will finish a game in progress.
 
-DELETE base_url/rest/games/{id}
-===============================
+### DELETE base_url/rest/games/{id}
 This method will delete an existent game.
 
 PLAYERS
 ========
 
-GET base_url/rest/players
-=========================
+### GET base_url/rest/players
 This method returns all the players available in the game.
 
-GET base_url/rest/players/{playerId}
-====================================
+###GET base_url/rest/players/{playerId}
 This method retrieve the information of a player.
 
-POST base_url/rest/players/{playerId}/{aCoordinate}
-===================================================
+###POST base_url/rest/players/{playerId}/{aCoordinate}
 Where aCoordinate is one of the 09 coordinates available in the tic tac toe game:
 				 A1 | A2 | A3
 				--------------
@@ -81,7 +55,6 @@ Where aCoordinate is one of the 09 coordinates available in the tic tac toe game
 				 C1 | C2 | C3
 				 
 Exceptions
-==========
 The exceptions thrown when running the API are intercepted by the class DefaultExceptionMapper to display them in a JSON friendly way.
 
 Testin tool
