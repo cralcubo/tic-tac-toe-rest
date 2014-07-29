@@ -6,5 +6,71 @@
 </head>
 <body>
 <h1>Tic tac toe REST API</h1>
+
+<p>
+REST+JSON API for playing the game tic tac toe. This API follow many of the good practices (and I even used some of the code style) of the tutorial <a href="https://www.youtube.com/watch?v=ITmcAGvfcJI&list=WL&index=16">Beautiful REST + JSON APIs with JAX-RS and Jersey</a> 
+<br/>
+For this API were used JAX-RS/Jersey.
+<br/>
+There are two controllers that do all the job to play the game: GamesController and PlayersController, so start inspecting this classes in case you are interested to see the way that the API was thought.
+</p>
+
+<h2>Methods</h2>
+
+<h2>GAMES</h2>
+
+<h3>GET base_url/rest/games[?expand=true]</h3>
+
+This method will return all the games available in the server.
+<br/>
+In case you would want to check the content of all the games, you can add the request parameter: expand=true.
+<br/>
+<h3>GET base_url/rest/games/{id}</h3>
+
+This method will get one of the games that already exist in the server.
+<br/>
+<h3>POST base_url/rest/games</h3>
+
+This method will create a new game with two players, one for the Circle shapes and the other for the Cross shapes in the game.
+<br/>
+<h3>PUT base_url/rest/games/{id} --data "{status:"aStatus"}"</h3>
+Where: id is here the game id and aStatus is one of the followings:
+<br/>
+	- STARTED: Use this status to start the game.
+<br/>
+	- FINISHED: Use this status to finish the game.
+<br/>	
+This method will either start a created game or will finish a game in progress.
+<br/>
+<h3>DELETE base_url/rest/games/{id}</h3>
+This method will delete an existent game.
+<br/>
+<h2>PLAYERS</h2>
+
+<h3>GET base_url/rest/players</h3>
+This method returns all the players available in the game.
+<br/>
+<h3>GET base_url/rest/players/{playerId}</h3>
+This method retrieve the information of a player.
+<br/>
+<h3>POST base_url/rest/players/{playerId}/{aCoordinate}</h3>
+Where aCoordinate is one of the 09 coordinates available in the tic tac toe game:
+<br/>
+<table>
+	<tr><td>A1 | A2 | A3</td></tr>
+	<tr><td>B1 | B2 | B3</td></tr>
+	<tr><td>C1 | C2 | C3</td></tr>
+</table>
+
+<br />				 
+
+<h2>Exceptions</h2>
+The exceptions thrown when running the API are intercepted by the class DefaultExceptionMapper to display them in a JSON friendly way.
+
+<h2>Testin tool</h2>
+
+To test the API I used <a href="https://github.com/spring-projects/rest-shell">rest-shell</a> 
+
+
 </body>
 </html>

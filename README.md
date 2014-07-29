@@ -57,6 +57,7 @@ Where aCoordinate is one of the 09 coordinates available in the tic tac toe game
 				 C1 | C2 | C3
 				 
 Exceptions
+==========
 The exceptions thrown when running the API are intercepted by the class DefaultExceptionMapper to display them in a JSON friendly way.
 
 Testin tool
