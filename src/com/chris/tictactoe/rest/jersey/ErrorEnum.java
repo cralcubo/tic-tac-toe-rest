@@ -12,8 +12,9 @@ import com.chris.tictactoe.rest.exceptions.UnsupportedShapeException;
 import com.sun.jersey.api.NotFoundException;
 
 public enum ErrorEnum {
+	UNSUPPORTED_OPERATION(UnsupportedOperationException.class, 500, "Internal Error (Method tried to be excecuted is not supported)"),
 	NO_SUCH_ELEMENT(NoSuchElementException.class, 404, "Not Found"),
-	NULL_POINTER(NullPointerException.class, 500, "Internal Error"),
+	NULL_POINTER(NullPointerException.class, 500, "Internal Error (Null Pointer Exception)"),
 	JERSEY_NOT_FOUND(NotFoundException.class, 404, "Not Found method"),
 	UNSUPPORTED_SHAPE(UnsupportedShapeException.class, 500, "Internal Game Exception"),
 	UNSUPPORTED_COORDINATE(UnsupportedCoordinateException.class, 500, "Internal Game Exception"),

@@ -1,5 +1,7 @@
 package com.chris.tictactoe.rest.model;
 
+import java.util.Map;
+
 public class Game extends Entity {
 	
 	private GameStatus status;
@@ -7,6 +9,8 @@ public class Game extends Entity {
 	private GamePlayer crossPlayer;
 	
 	private GamePlayer circlePlayer;
+	
+	private Map<String, String> gameMatrix;
 
 	public GameStatus getStatus() {
 		return status;
@@ -30,5 +34,13 @@ public class Game extends Entity {
 
 	public void setCirclePlayer(GamePlayer circlePlayer) {
 		this.circlePlayer = circlePlayer;
+	}
+
+	public Map<String, String> getGameMatrix() {
+		return gameMatrix;
+	}
+
+	public void setGameMatrix(Map<String, String> gameMatrix) {
+		this.gameMatrix = gameMatrix;
 	}
 }

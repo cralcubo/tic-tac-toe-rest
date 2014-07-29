@@ -64,6 +64,12 @@ public class GamesController extends BaseController {
 	public GameResource getGame(@PathParam("id") String id){
 		Game game = gameRepository.get(id);
 		
+		if(game.getStatus() != null){
+			GameManager manager = managerRepository.get(id);
+			manager.checkGameMatrix();
+			manager.checkResults();
+		}
+		
 		return new GameResource(uriInfo, game);
 	}
 	

@@ -22,6 +22,8 @@ public interface GameManager {
 	
 	String checkResults();
 	
+	void checkGameMatrix();
+	
 	Game getGame();
 	
 	GamePlayer getCirclePlayer();

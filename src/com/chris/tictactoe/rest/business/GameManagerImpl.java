@@ -1,5 +1,8 @@
 package com.chris.tictactoe.rest.business;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,6 +17,7 @@ import com.chris.tictactoe.game.exceptions.WrongShapeException;
 import com.chris.tictactoe.game.model.Player;
 import com.chris.tictactoe.game.model.shapes.Circle;
 import com.chris.tictactoe.game.model.shapes.Cross;
+import com.chris.tictactoe.game.model.shapes.TicTacToeShape;
 import com.chris.tictactoe.rest.exceptions.GameNotStartedException;
 import com.chris.tictactoe.rest.exceptions.UnsupportedCoordinateException;
 import com.chris.tictactoe.rest.exceptions.UnsupportedShapeException;
@@ -27,6 +31,8 @@ import com.chris.tictactoe.rest.model.PlayerStatus;
 public class GameManagerImpl extends Entity implements GameManager  {
 	
 	private static final Logger LOG = LoggerFactory.getLogger(GameManagerImpl.class);
+
+	private static final String EMPTY_STR = "EMPTY";
 	
 	private TicTacToe ticTacToe;
 	private Player circlePlayer;
@@ -124,6 +130,20 @@ public class GameManagerImpl extends Entity implements GameManager  {
 			return "No winner yet, keep playing!"; 
 		}
 		
+	}
+	
+	public void checkGameMatrix(){
+		Map<String, String> matrix = new TreeMap<String, String>();
+		
+		if(ticTacToe != null){
+			Map<GameCoordinates, TicTacToeShape> tictactoeMatrix =  ticTacToe.getGameMatrix();
+			for(GameCoordinates coordinates : tictactoeMatrix.keySet()){
+				String shape = (tictactoeMatrix.get(coordinates) != null) ? tictactoeMatrix.get(coordinates).toString() : EMPTY_STR;
+				matrix.put(coordinates.name(), shape );
+			}
+		}
+		
+		game.setGameMatrix(matrix);
 	}
 
 	private GameCoordinates getCoordinates(String aCoordinate) {

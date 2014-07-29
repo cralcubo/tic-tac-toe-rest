@@ -11,9 +11,11 @@ public class GameResource extends LinkResource {
 	public GameResource(UriInfo info, Game game) {
 		super(info, game);
 		
-		put("status", game.getStatus());
 		put("player1", new GamePlayerResource(info, game.getCrossPlayer()));
 		put("player2", new GamePlayerResource(info, game.getCirclePlayer()));
+		
+		put("status", game.getStatus());
+		put("matrix", game.getGameMatrix());
 	}
 
 }
