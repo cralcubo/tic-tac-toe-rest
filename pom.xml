@@ -4,7 +4,7 @@
 
 	<groupId>com.chris</groupId>
 	<artifactId>tic-tac-toe-rest</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>war</packaging>
 
 	<name>tic-tac-toe-rest</name>
