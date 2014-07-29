@@ -29,6 +29,7 @@ This method will create a new game with two players, one for the Circle shapes a
 
 ### PUT base_url/rest/games/{id} --data "{status:"aStatus"}"
 Where: id is here the game id and aStatus is one of the followings:
+
 	- STARTED: Use this status to start the game.
 	- FINISHED: Use this status to finish the game.
 	
@@ -48,6 +49,7 @@ This method retrieve the information of a player.
 
 ###POST base_url/rest/players/{playerId}/{aCoordinate}
 Where aCoordinate is one of the 09 coordinates available in the tic tac toe game:
+
 				 A1 | A2 | A3
 				--------------
 				 B1 | B2 | B3
