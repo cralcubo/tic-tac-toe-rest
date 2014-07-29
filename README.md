@@ -60,7 +60,7 @@ Exceptions
 ==========
 The exceptions thrown when running the API are intercepted by the class DefaultExceptionMapper to display them in a JSON friendly way.
 
-Testin tool
+Testing tool
 ===========
 
 To test the API I used [rest-shell](https://github.com/spring-projects/rest-shell "rest-shell") 
