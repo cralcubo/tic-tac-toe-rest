@@ -11,7 +11,7 @@ public class ErrorMapper extends LinkedHashMap<String, String> {
     private static final String MESSAGE_PROP_NAME = "message";
     private static final String MORE_INFO_PROP_NAME = "moreInfo";
 
-    private static final String DEFAULT_MORE_INFO_URL = "mailto:christian.roman.rua@gmail.com";
+    private static final String DEFAULT_MORE_INFO_URL = "mailto:christian@anEmail.com";
 	
 	public ErrorMapper(ErrorEnum errorEnum, Exception exception) {
 		put(STATUS_PROP_NAME, errorEnum.getStatus());
