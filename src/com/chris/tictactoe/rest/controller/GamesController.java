@@ -109,7 +109,7 @@ public class GamesController extends BaseController {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response startGame(@PathParam("id") String id, Map<String, String> body) throws UnsupportedShapeException, GameNotStartedException {
+	public Response updateGame(@PathParam("id") String id, Map<String, String> body) throws UnsupportedShapeException, GameNotStartedException {
 		GameManager manager = managerRepository.get(id);
 		Game game = gameRepository.get(id);
 		
