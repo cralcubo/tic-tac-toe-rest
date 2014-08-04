@@ -1,6 +1,6 @@
 package com.chris.tictactoe.rest.controller.resources;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -10,8 +10,8 @@ import javax.ws.rs.core.UriInfo;
 import org.easymock.EasyMock;
 import org.junit.Test;
 
-import com.chris.tictactoe.rest.model.Entity;
-import com.chris.tictactoe.rest.model.Game;
+import com.chris.tictactoe.service.model.Entity;
+import com.chris.tictactoe.service.model.Game;
 
 public class LinkResourceTest {
 	

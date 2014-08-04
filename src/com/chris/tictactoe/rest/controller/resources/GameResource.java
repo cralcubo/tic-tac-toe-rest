@@ -2,7 +2,7 @@ package com.chris.tictactoe.rest.controller.resources;
 
 import javax.ws.rs.core.UriInfo;
 
-import com.chris.tictactoe.rest.model.Game;
+import com.chris.tictactoe.service.model.Game;
 
 public class GameResource extends LinkResource {
 	private static final long serialVersionUID = -6005468771349444288L;

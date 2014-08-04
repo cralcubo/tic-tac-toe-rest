@@ -19,19 +19,19 @@ import com.chris.tictactoe.game.exceptions.GameOverException;
 import com.chris.tictactoe.game.exceptions.NoPlayersRegisteredException;
 import com.chris.tictactoe.game.exceptions.PositionOccupiedException;
 import com.chris.tictactoe.game.exceptions.WaitYourTurnException;
-import com.chris.tictactoe.rest.business.GameManager;
-import com.chris.tictactoe.rest.business.GameManagerImpl;
 import com.chris.tictactoe.rest.controller.factory.PlayerResourceFactory;
 import com.chris.tictactoe.rest.controller.resources.CollectionResource;
 import com.chris.tictactoe.rest.controller.resources.GamePlayerResource;
 import com.chris.tictactoe.rest.controller.resources.LinkResource;
-import com.chris.tictactoe.rest.dao.DAO;
-import com.chris.tictactoe.rest.dao.GameManagerStaticRepository;
-import com.chris.tictactoe.rest.dao.PlayerStaticRepository;
-import com.chris.tictactoe.rest.exceptions.GameNotStartedException;
-import com.chris.tictactoe.rest.exceptions.UnsupportedCoordinateException;
-import com.chris.tictactoe.rest.model.GamePlayer;
-import com.chris.tictactoe.rest.model.PlayerShape;
+import com.chris.tictactoe.service.business.GameManager;
+import com.chris.tictactoe.service.business.GameManagerImpl;
+import com.chris.tictactoe.service.dao.DAO;
+import com.chris.tictactoe.service.dao.GameManagerStaticRepository;
+import com.chris.tictactoe.service.dao.PlayerStaticRepository;
+import com.chris.tictactoe.service.exceptions.GameNotStartedException;
+import com.chris.tictactoe.service.exceptions.UnsupportedCoordinateException;
+import com.chris.tictactoe.service.model.GamePlayer;
+import com.chris.tictactoe.service.model.PlayerShape;
 
 @Path(LinkResource.PLAYERS)
 public class PlayersController extends BaseController {

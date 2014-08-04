@@ -8,7 +8,7 @@ import javax.ws.rs.core.UriInfo;
 
 import com.chris.tictactoe.rest.controller.factory.ResourcesFactory;
 import com.chris.tictactoe.rest.controller.resources.LinkResource;
-import com.chris.tictactoe.rest.model.Entity;
+import com.chris.tictactoe.service.model.Entity;
 
 public class ControllersUtility {
 	

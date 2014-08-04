@@ -3,7 +3,7 @@ package com.chris.tictactoe.rest.controller.factory;
 import javax.ws.rs.core.UriInfo;
 
 import com.chris.tictactoe.rest.controller.resources.GameResource;
-import com.chris.tictactoe.rest.model.Game;
+import com.chris.tictactoe.service.model.Game;
 
 public class GameResourceFactory implements ResourcesFactory<GameResource, Game> {
 

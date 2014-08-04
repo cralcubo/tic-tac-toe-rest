@@ -1,6 +1,6 @@
 package com.chris.tictactoe.rest.controller.resources;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -12,10 +12,10 @@ import javax.ws.rs.core.UriInfo;
 import org.easymock.EasyMock;
 import org.junit.Test;
 
-import com.chris.tictactoe.rest.model.Game;
-import com.chris.tictactoe.rest.model.GamePlayer;
-import com.chris.tictactoe.rest.model.GameStatus;
-import com.chris.tictactoe.rest.model.PlayerStatus;
+import com.chris.tictactoe.service.model.Game;
+import com.chris.tictactoe.service.model.GamePlayer;
+import com.chris.tictactoe.service.model.GameStatus;
+import com.chris.tictactoe.service.model.PlayerStatus;
 
 public class CollectionResourceTest {
 	

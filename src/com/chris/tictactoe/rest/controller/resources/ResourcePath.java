@@ -1,8 +1,8 @@
 package com.chris.tictactoe.rest.controller.resources;
 
-import com.chris.tictactoe.rest.model.Entity;
-import com.chris.tictactoe.rest.model.Game;
-import com.chris.tictactoe.rest.model.GamePlayer;
+import com.chris.tictactoe.service.model.Entity;
+import com.chris.tictactoe.service.model.Game;
+import com.chris.tictactoe.service.model.GamePlayer;
 
 public enum ResourcePath {
 	

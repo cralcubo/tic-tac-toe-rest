@@ -2,7 +2,7 @@ package com.chris.tictactoe.rest.controller.resources;
 
 import javax.ws.rs.core.UriInfo;
 
-import com.chris.tictactoe.rest.model.GamePlayer;
+import com.chris.tictactoe.service.model.GamePlayer;
 
 @SuppressWarnings("serial")
 public class GamePlayerResource extends LinkResource {

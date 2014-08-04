@@ -18,21 +18,21 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-import com.chris.tictactoe.rest.business.GameManager;
-import com.chris.tictactoe.rest.business.GameManagerImpl;
 import com.chris.tictactoe.rest.controller.factory.GameResourceFactory;
 import com.chris.tictactoe.rest.controller.resources.CollectionResource;
 import com.chris.tictactoe.rest.controller.resources.GameResource;
 import com.chris.tictactoe.rest.controller.resources.LinkResource;
-import com.chris.tictactoe.rest.dao.DAO;
-import com.chris.tictactoe.rest.dao.GameManagerStaticRepository;
-import com.chris.tictactoe.rest.dao.GameStaticRepository;
-import com.chris.tictactoe.rest.dao.PlayerStaticRepository;
-import com.chris.tictactoe.rest.exceptions.GameNotStartedException;
-import com.chris.tictactoe.rest.exceptions.UnsupportedShapeException;
-import com.chris.tictactoe.rest.model.Game;
-import com.chris.tictactoe.rest.model.GamePlayer;
-import com.chris.tictactoe.rest.model.GameStatus;
+import com.chris.tictactoe.service.business.GameManager;
+import com.chris.tictactoe.service.business.GameManagerImpl;
+import com.chris.tictactoe.service.dao.DAO;
+import com.chris.tictactoe.service.dao.GameManagerStaticRepository;
+import com.chris.tictactoe.service.dao.GameStaticRepository;
+import com.chris.tictactoe.service.dao.PlayerStaticRepository;
+import com.chris.tictactoe.service.exceptions.GameNotStartedException;
+import com.chris.tictactoe.service.exceptions.UnsupportedShapeException;
+import com.chris.tictactoe.service.model.Game;
+import com.chris.tictactoe.service.model.GamePlayer;
+import com.chris.tictactoe.service.model.GameStatus;
 
 @Path(LinkResource.GAMES)
 public class GamesController extends BaseController {

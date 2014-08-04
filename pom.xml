@@ -4,7 +4,6 @@
 
 	<groupId>com.chris</groupId>
 	<artifactId>tic-tac-toe-rest</artifactId>
-	<version>0.0.1</version>
 	<packaging>war</packaging>
 
 	<name>tic-tac-toe-rest</name>
@@ -34,4 +33,5 @@
 
 	<description>The Tic Tac Toe game rest API</description>
 
+	<version>1.0.0</version>
 </project>

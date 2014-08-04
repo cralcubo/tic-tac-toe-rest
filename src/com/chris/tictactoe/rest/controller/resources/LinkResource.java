@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 
 import javax.ws.rs.core.UriInfo;
 
-import com.chris.tictactoe.rest.model.Entity;
+import com.chris.tictactoe.service.model.Entity;
 
 
 @SuppressWarnings({ "rawtypes", "serial" })

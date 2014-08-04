@@ -6,9 +6,9 @@ import com.chris.tictactoe.game.exceptions.GameOverException;
 import com.chris.tictactoe.game.exceptions.NoPlayersRegisteredException;
 import com.chris.tictactoe.game.exceptions.PositionOccupiedException;
 import com.chris.tictactoe.game.exceptions.WaitYourTurnException;
-import com.chris.tictactoe.rest.exceptions.GameNotStartedException;
-import com.chris.tictactoe.rest.exceptions.UnsupportedCoordinateException;
-import com.chris.tictactoe.rest.exceptions.UnsupportedShapeException;
+import com.chris.tictactoe.service.exceptions.GameNotStartedException;
+import com.chris.tictactoe.service.exceptions.UnsupportedCoordinateException;
+import com.chris.tictactoe.service.exceptions.UnsupportedShapeException;
 import com.sun.jersey.api.NotFoundException;
 
 public enum ErrorEnum {
