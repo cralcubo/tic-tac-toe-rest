@@ -15,6 +15,9 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.chris.tictactoe.game.exceptions.GameOverException;
 import com.chris.tictactoe.game.exceptions.NoPlayersRegisteredException;
 import com.chris.tictactoe.game.exceptions.PositionOccupiedException;
@@ -35,6 +38,7 @@ import com.chris.tictactoe.service.model.PlayerShape;
 
 @Path(LinkResource.PLAYERS)
 public class PlayersController extends BaseController {
+	private static final Logger LOG = LoggerFactory.getLogger(PlayersController.class);
 
 	private DAO<GamePlayer> playerRepository = PlayerStaticRepository.getInstance();
 	private DAO<GameManagerImpl> managerRepository = GameManagerStaticRepository.getInstance();
@@ -68,17 +72,21 @@ public class PlayersController extends BaseController {
 	@Path("{id}/{coordinate}")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response play(@PathParam("id") String id, @PathParam("coordinate") String coordinate) throws UnsupportedCoordinateException, PositionOccupiedException, WaitYourTurnException, GameOverException, NoPlayersRegisteredException, GameNotStartedException{
+	public Response play(@PathParam("id") String id, @PathParam("coordinate") String coordinate) throws UnsupportedCoordinateException, PositionOccupiedException, WaitYourTurnException, GameOverException, GameNotStartedException{
 		GamePlayer player = playerRepository.get(id);
 		
 		String[] idSplitted = id.split("-");
 		String gameId = idSplitted[1];
 		GameManager manager = managerRepository.get(gameId);
 		
-		if(player.getShape().equals(PlayerShape.CIRCLE.getShape())){
-			manager.playCircle(coordinate);
-		}else{
-			manager.playCross(coordinate);
+		try{
+			if(player.getShape().equals(PlayerShape.CIRCLE.getShape())){
+				manager.playCircle(coordinate);
+			}else{
+				manager.playCross(coordinate);
+			}
+		} catch(NoPlayersRegisteredException e){
+			LOG.error("Players need to be registered before the game is started, this is suppose to be done when a new game is created, check that method!", e);
 		}
 		
 		return modifiedResponse(new GamePlayerResource(uriInfo, player));
